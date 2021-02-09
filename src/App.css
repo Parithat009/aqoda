@@ -36,3 +36,43 @@
     transform: rotate(360deg);
   }
 }
+.activityLog{
+  background-color: antiquewhite;
+  padding: 25px;
+  color: black;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.listRoom{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.blogRoom {
+  margin: 15px;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.blogRoom.active {
+  background-color: blue;
+}
+
+.divCheck{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.divCheckin{
+  margin: 15px;
+  border: 1px solid white;
+  padding: 25px;
+  border-radius: 3px;
+  cursor: pointer;
+}
