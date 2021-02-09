@@ -50,7 +50,7 @@ const App = () => {
   const allGuest = () => {
     let filterGuest = hotel?.map(item => item?.room?.filter(val => val?.status === 'booked'))
     filterGuest = filterGuest.reduce((a, b) => a.concat(b)).map(item => item.detail)
-    console.log(filterGuest);
+    // console.log(filterGuest);
     setactivity(prev => [
       ...prev,
       `All Guest : ${filterGuest.length > 0 ? filterGuest.toString() : 'No have guest'}`
@@ -123,8 +123,6 @@ const App = () => {
       ])
     }
   }
-
-  console.log(hotel);
 
   return (
     <div className="App">
