@@ -11,7 +11,7 @@ const App = () => {
   const [select, setselect] = useState({})
 
   const createHotel = () => {
-    if (floor && room) {
+    if (floor > 0 && room > 0) {
       let mock = []
 
       for (let i = 1; i <= floor; i++) {
@@ -119,7 +119,9 @@ const App = () => {
       setHotel(mock)
       setactivity(prev => [
         ...prev,
-        `${filterRoom[0].detail} is check out room  ${filterRoom[0].roomNumber}`
+        filterRoom[0]
+          ? `${filterRoom[0]?.detail} is check out room  ${filterRoom[0]?.roomNumber}`
+          : 'Not have Guest name check in'
       ])
     }
   }
