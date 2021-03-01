@@ -2,7 +2,7 @@ import { callApi } from './callApi'
 
 export const getUsersService = async () => {
   try {
-    const response = await callApi().get(`/user`).catch(err => err.response)
+    const response = await callApi().get(`/users`).catch(err => err.response)
     console.log(response)
   } catch (error) {
     console.log('service error', error)
@@ -11,8 +11,8 @@ export const getUsersService = async () => {
 
 export const getUserByIdService = async (id) => {
   try {
-    const response = await callApi().get(`/user/${id}`).catch(err => err.response)
-    console.log(response);
+    const response = await callApi().get(`/users/${id}`).catch(err => err.response)
+    return response?.data
   } catch (error) {
     console.log('service error', error)
   }

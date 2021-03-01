@@ -1,9 +1,15 @@
-import { atom, selector } from 'recoil'
+import { atom, selector, atomFamily, selectorFamily } from 'recoil'
 import { getUserByIdService, getUsersService } from '../service/user'
+import { countState } from './countState'
 
 export const usersState = atom({
   key: 'usersState',
   default: []
+})
+
+export const testState = atom({
+  key: 'testState',
+  default: 0
 })
 
 export const usersLength = selector({
@@ -14,27 +20,24 @@ export const usersLength = selector({
   }
 })
 
-// export const usersState = selector({
-//   key: 'usersState',
-//   get: async () => {
-//     const response = await getUsersService()
-//     return response
-//   },
-//   // set: ({ set }, newValue) => {
-//   //   console.log(newValue, usersState, usersLength);
-//   //   // set(
-//   //   //   // usersState,
-//   //   //   newValue
-//   //   // )
-//   // }
-// })
-
 export const userById = selector({
   key: 'userById',
-  get: async () => {
-    const response = await getUserByIdService(2)
-    console.log('0000000', response);
+  get: async ({ get }) => {
+    let a = get(countState)
+    const response = await getUserByIdService(a)
     return response
+  },
+  set: ({ set }, newValue) => {
+    set(testState, prev => prev + newValue)
   }
 })
+
+export const elementPositionStateFamily = atomFamily({
+  key: 'ElementPosition',
+  default: async (param) => {
+    const response = await getUserByIdService(param)
+    console.log('response');
+    return response
+  }
+});
 

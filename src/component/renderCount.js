@@ -3,12 +3,13 @@ import { useRecoilState, useRecoilValue } from 'recoil'
 import { countState } from '../store'
 
 const RenderCount = () => {
-  const count = useRecoilValue(countState)
+  const [count, setCount] = useRecoilState(countState)
 
   console.log('render count');
   return (
-    <div>
-      {count}
+    <div style={{ border: '1px solid white' }}>
+      {count}<br />
+      <button onClick={() => setCount(prev => prev + 1)}>count +1 </button>
     </div>
   )
 }

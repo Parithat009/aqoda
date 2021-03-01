@@ -11,24 +11,24 @@ const App = () => {
   // const [users, setUsers] = useRecoilState(usersState)
   // const [count, setCount] = useRecoilState(countState)
 
-  const [users, setUsers] = useState([])
+  // const [users, setUsers] = useState([])
 
-  const getUsers = async () => {
-    const response = await getUsersService()
-  }
+  // const getUsers = async () => {
+  //   const response = await getUsersService()
+  // }
 
-  const getUserById = async (id) => {
-    const response = await getUserByIdService(id)
-  }
+  // const getUserById = async (id) => {
+  //   const response = await getUserByIdService(id)
+  // }
 
   const createUser = async () => {
     const response = await createUserService({ name: 'Test User', username: 'admin' })
   }
 
-  useEffect(() => {
-    getUsers()
-    getUserById(2)
-  }, [])
+  // useEffect(() => {
+    // getUsers()
+    // getUserById(2)
+  // }, [])
 
   // const getUsers = async () => {
   //   const res = await getUsersService()
@@ -40,11 +40,10 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <RenderList /><br />
+        <RenderList /><br />
         <RenderCount /><br />
-        <button onClick={() => setCount(prev => prev + 1)}>Count +1</button>
+        {/* <button onClick={() => setCount(prev => prev + 1)}>Count +1</button>
         <button onClick={createUser}>Crete User</button> */}
-        testdd naja
         <button onClick={() => createUser()}>create user</button>
       </header>
     </div>
