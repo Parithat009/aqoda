@@ -36,7 +36,7 @@ export const elementPositionStateFamily = atomFamily({
   key: 'ElementPosition',
   default: async (param) => {
     const response = await getUserByIdService(param)
-    console.log('response');
+    console.log(response);
     return response
   }
 });
