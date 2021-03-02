@@ -19,7 +19,7 @@ export const RenderList = React.memo(() => {
         <div key={i}>{item?.name} --- {item?.website}</div>
       ))}
 
-      Total user : {user} <br />
+      Total users : {user} <br />
 
       <p style={{ color: 'red' }}>{userId?.name}</p>
       <button onClick={() => setUserId(2.5)}>user id </button>
