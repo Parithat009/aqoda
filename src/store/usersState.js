@@ -1,5 +1,5 @@
 import { atom, selector, atomFamily, selectorFamily } from 'recoil'
-import { getUserByIdService, getUsersService } from '../service/user'
+import { getUserByIdService } from '../service/user'
 import { countState } from './countState'
 
 export const usersState = atom({
